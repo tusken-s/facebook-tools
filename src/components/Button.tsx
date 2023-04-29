@@ -53,6 +53,8 @@ const Button: FC<ButtonProps> = ({
           display: "flex",
           justifyContent: "flex-start",
           placeItems: "center",
+          opacity: typeof window === "undefined" || disabled ? .5 : 1,
+          cursor: typeof window === "undefined" || disabled ? "not-allowed" : "pointer"
         }}
         disabled={typeof window === "undefined" || disabled}
         onClick={() => {
