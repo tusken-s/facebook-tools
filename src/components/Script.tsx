@@ -20,15 +20,16 @@ const Script: FC<ScriptProps> = ({ appId, cookie }) => {
       ((d, s, id) => {
         let js: HTMLScriptElement;
         const fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        // @ts-ignore
-        js = d.createElement(s);
-        js.id = id;
-        js.async = true;
-        js.defer = true;
-        js.crossOrigin = "anonymous";
-        js.src = "https://connect.facebook.net/fr_FR/sdk.js";
-        js.nonce = "aieR2yIx";
+        if (!d.getElementById(id)) {
+          // @ts-ignore
+          js = d.createElement(s);
+          js.id = id;
+          js.async = true;
+          js.defer = true;
+          js.crossOrigin = "anonymous";
+          js.src = "https://connect.facebook.net/fr_FR/sdk.js";
+          js.nonce = "aieR2yIx";
+        }
         // @ts-ignore
         fjs.parentNode.insertBefore(js, fjs);
       })(document, "script", "facebook-jssdk");
