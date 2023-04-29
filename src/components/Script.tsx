@@ -35,7 +35,7 @@ const Script: FC<ScriptProps> = ({ appId, cookie, language }) => {
     } else {
       console.error("props 'appId' is required to initiate Facebook SDK!");
     }
-  }, [appId, cookie]);
+  }, [appId, cookie, language]);
 
   return <div id="fb-root" />;
 };
