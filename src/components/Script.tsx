@@ -8,6 +8,7 @@ export interface ScriptProps {
 const Script: FC<ScriptProps> = ({ appId, cookie }) => {
   useEffect(() => {
     if (window && appId) {
+      // Define the FB async init function
       window.fbAsyncInit = () => {
         window.FB.init({
           appId,
@@ -17,22 +18,21 @@ const Script: FC<ScriptProps> = ({ appId, cookie }) => {
           version: "v16.0",
         });
       };
-      ((d, s, id) => {
+      // Load the Facebook SDK asynchronously
+      (() => {
         let js: HTMLScriptElement;
-        const fjs = d.getElementsByTagName(s)[0];
-        if (!d.getElementById(id)) {
-          // @ts-ignore
-          js = d.createElement(s);
-          js.id = id;
+        const fjs = document.getElementsByTagName("script")[0];
+        if (!document.getElementById("facebook-jssdk")) {
+          js = document.createElement("script");
+          js.id = "facebook-jssdk";
           js.async = true;
           js.defer = true;
           js.crossOrigin = "anonymous";
           js.src = "https://connect.facebook.net/fr_FR/sdk.js";
           js.nonce = "aieR2yIx";
+          fjs.parentNode?.insertBefore(js, fjs);
         }
-        // @ts-ignore
-        fjs.parentNode.insertBefore(js, fjs);
-      })(document, "script", "facebook-jssdk");
+      })();
     } else {
       console.error("props 'appId' is required to initiate Facebook SDK!");
     }
