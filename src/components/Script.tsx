@@ -20,20 +20,18 @@ const Script: FC<ScriptProps> = ({ appId, cookie, language }) => {
         });
       };
       // Load the Facebook SDK asynchronously
-      (() => {
-        let js: HTMLScriptElement;
-        const fjs = document.getElementsByTagName("script")[0];
-        if (!document.getElementById("facebook-jssdk")) {
-          js = document.createElement("script");
-          js.id = "facebook-jssdk";
-          js.async = true;
-          js.defer = true;
-          js.crossOrigin = "anonymous";
-          js.src = `https://connect.facebook.net/${language || "en_US"}/sdk.js`;
-          js.nonce = "aieR2yIx";
-          fjs.parentNode?.insertBefore(js, fjs);
-        }
-      })();
+      let js: HTMLScriptElement;
+      const fjs = document.getElementsByTagName("script")[0];
+      if (!document.getElementById("facebook-jssdk")) {
+        js = document.createElement("script");
+        js.id = "facebook-jssdk";
+        js.async = true;
+        js.defer = true;
+        js.crossOrigin = "anonymous";
+        js.src = `https://connect.facebook.net/${language || "en_US"}/sdk.js`;
+        js.nonce = "aieR2yIx";
+        fjs.parentNode?.insertBefore(js, fjs);
+      }
     } else {
       console.error("props 'appId' is required to initiate Facebook SDK!");
     }

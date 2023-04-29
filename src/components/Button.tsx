@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { FC, useEffect } from "react";
 import { StatusResponse } from "../index";
 
 export interface ButtonProps {
@@ -9,10 +9,15 @@ export interface ButtonProps {
   callback: (x: StatusResponse["authResponse"]) => void;
 }
 
-const Button = (props: ButtonProps) => {
+const Button: FC<ButtonProps> = ({
+  scope,
+  buttonType,
+  callback,
+  disabled,
+  width,
+}) => {
   useEffect(() => {
     if (window?.FB) {
-      const { callback } = props;
       window.FB.Event.subscribe("auth.statusChange", () => {
         window.FB.getLoginStatus((res) => {
           if (res.authResponse && res.status === "connected")
@@ -40,7 +45,7 @@ const Button = (props: ButtonProps) => {
           fontSize: 16,
           fontWeight: "normal",
           height: 32,
-          width: props.width || "fit-content",
+          width: width || "fit-content",
           border: 0,
           borderRadius: 4,
           backgroundColor: "rgb(26, 119, 242)",
@@ -49,10 +54,9 @@ const Button = (props: ButtonProps) => {
           justifyContent: "flex-start",
           placeItems: "center",
         }}
-        disabled={props.disabled}
+        disabled={!window?.FB || disabled}
         onClick={() => {
           if (window?.FB) {
-            const { scope, callback } = props;
             window.FB.login(
               (res) => {
                 if (res.status === "connected") callback(res.authResponse);
@@ -97,7 +101,7 @@ const Button = (props: ButtonProps) => {
             />
           </svg>
           <span>
-            {props.buttonType === "continue_with"
+            {buttonType === "continue_with"
               ? "Continue with Facebook"
               : "Login with Facebook"}
           </span>
