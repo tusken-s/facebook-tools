@@ -2,10 +2,11 @@ import React, { FC, useEffect } from "react";
 
 export interface ScriptProps {
   appId: string;
-  cookie: boolean;
+  cookie?: boolean;
+  language?: `${Lowercase<string>}_${Uppercase<string>}`;
 }
 
-const Script: FC<ScriptProps> = ({ appId, cookie }) => {
+const Script: FC<ScriptProps> = ({ appId, cookie, language }) => {
   useEffect(() => {
     if (window && appId) {
       // Define the FB async init function
@@ -28,7 +29,7 @@ const Script: FC<ScriptProps> = ({ appId, cookie }) => {
           js.async = true;
           js.defer = true;
           js.crossOrigin = "anonymous";
-          js.src = "https://connect.facebook.net/fr_FR/sdk.js";
+          js.src = `https://connect.facebook.net/${language || "en_US"}/sdk.js`;
           js.nonce = "aieR2yIx";
           fjs.parentNode?.insertBefore(js, fjs);
         }
