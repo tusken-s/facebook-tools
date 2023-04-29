@@ -17,7 +17,7 @@ const Button: FC<ButtonProps> = ({
   width,
 }) => {
   useEffect(() => {
-    if (window?.FB) {
+    if (typeof window !== "undefined" && window?.FB) {
       window.FB.Event.subscribe("auth.statusChange", () => {
         window.FB.getLoginStatus((res) => {
           if (res.authResponse && res.status === "connected")
@@ -54,9 +54,9 @@ const Button: FC<ButtonProps> = ({
           justifyContent: "flex-start",
           placeItems: "center",
         }}
-        disabled={!window?.FB || disabled}
+        disabled={typeof window === "undefined" || disabled}
         onClick={() => {
-          if (window?.FB) {
+          if (typeof window !== "undefined" && window?.FB) {
             window.FB.login(
               (res) => {
                 if (res.status === "connected") callback(res.authResponse);

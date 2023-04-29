@@ -8,7 +8,7 @@ export interface ScriptProps {
 
 const Script: FC<ScriptProps> = ({ appId, cookie, language }) => {
   useEffect(() => {
-    if (window && appId) {
+    if (typeof window !== "undefined" && appId) {
       // Define the FB async init function
       window.fbAsyncInit = () => {
         window.FB.init({
