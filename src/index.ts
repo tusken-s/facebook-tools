@@ -26,11 +26,7 @@ declare global {
     };
   }
 }
-
-export { Button, Script };
-
-export type { ButtonProps, ScriptProps };
-export type StatusResponse = {
+type StatusResponse = {
   status: "connected" | "not_authorized" | "unknown";
   authResponse?: {
     accessToken: string;
@@ -39,11 +35,11 @@ export type StatusResponse = {
     userID: string;
   };
 };
-export type ApiMethod = "get" | "post" | "delete";
-export type FacebookApiParams = {
+type ApiMethod = "get" | "post" | "delete";
+type FacebookApiParams = {
   [key: string]: string | number | boolean;
 };
-export type LoginOptions = {
+type LoginOptions = {
   auth_type?: string;
   scope?: string;
   return_scopes?: boolean;
@@ -53,10 +49,22 @@ export type LoginOptions = {
   rerequest?: boolean;
   return_nonce?: boolean;
 };
-export type InitParams = {
+type InitParams = {
   appId: string;
   autoLogAppEvents?: boolean;
   cookie?: boolean;
   xfbml?: boolean;
   version: string;
 };
+
+export type {
+  ButtonProps,
+  ScriptProps,
+  StatusResponse,
+  ApiMethod,
+  FacebookApiParams,
+  LoginOptions,
+  InitParams,
+};
+
+export { Button, Script };
