@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, useEffect } from "react";
+import React, { CSSProperties, FC, ReactNode, useEffect } from "react";
 import { StatusResponse } from "../index";
 
 export interface ButtonProps {
@@ -7,7 +7,7 @@ export interface ButtonProps {
   scope?: string;
   buttonType?: "continue_with" | "login_with";
   callback: (x: StatusResponse["authResponse"]) => void;
-  style?: CSSStyleRule;
+  style?: CSSProperties;
   children?: ReactNode;
 }
 
