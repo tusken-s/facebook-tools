@@ -56,7 +56,14 @@ const Button: FC<ButtonProps> = ({
       }}
     >
       {children ? (
-        <div onClick={handleClick}>{children}</div>
+        <div
+          style={{
+            width: width || "inherit",
+          }}
+          onClick={handleClick}
+        >
+          {children}
+        </div>
       ) : (
         <button
           className="fb-button-main-element"
