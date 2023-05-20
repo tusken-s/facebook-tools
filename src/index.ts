@@ -68,7 +68,12 @@ export type {
   InitParams,
 };
 
-const language = navigator.language || navigator.languages.at(0) || "en";
+let language = "en";
+// Use navigator language
+if (typeof navigator !== "undefined" && navigator.language)
+  language = navigator.language;
+// Use ISO language code
+if (language.includes("-")) language = language.replace("-", "_");
 // Mapping of language codes to ISO language codes with default country codes
 const languageMapping: { [ll: string]: string } = {
   en: "en_US",
