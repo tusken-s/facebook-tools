@@ -2,6 +2,17 @@ export type ISOLangCountry = `${Lowercase<string>}_${Uppercase<string>}`;
 
 type I18nType = { [ll_CC: ISOLangCountry]: { [key: string]: string } };
 
+const supportedLanguages: { [ll: string]: string } = {
+  en: "en_US",
+  fr: "fr_FR",
+  ar: "ar_AR",
+  es: "es_ES",
+  de: "de_DE",
+  pt: "pt_PT",
+  zh: "zh_CN",
+  he: "he_IL",
+};
+
 export const labels: I18nType = {
   en_US: {
     continue_with: "Continue with Facebook",
@@ -37,25 +48,31 @@ export const labels: I18nType = {
   },
 };
 
+/**
+ * Get the ISO language code based on the navigator language or fallback to the nearest alternative.
+ * @returns {ISOLangCountry} The ISO language code.
+ */
 export function getNavigatorLanguage(): ISOLangCountry {
   let language = "en";
-  // Use navigator language
-  if (typeof navigator !== "undefined" && navigator.language)
-    language = navigator.language;
-  // Use ISO language code
-  if (language.includes("-")) language = language.replace("-", "_");
-  // Mapping of language codes to ISO language codes with default country codes
-  const languageMapping: { [ll: string]: string } = {
-    en: "en_US",
-    fr: "fr_FR",
-    ar: "ar_AR",
-    es: "es_ES",
-    de: "de_DE",
-    pt: "pt_PT",
-    zh: "zh_CN",
-    he: "he_IL",
-  };
-  // Map language if not ll_CC
-  if (!language?.includes("_")) language = languageMapping[language];
+  if (typeof navigator !== "undefined" && navigator.language) {
+    const navigatorLanguage = navigator.language.slice(0, 2);
+    if (supportedLanguages[navigatorLanguage]) {
+      language = navigator.language;
+    }
+  }
+  if (language.includes("-")) {
+    language = language.replace("-", "_");
+  }
+  if (!language.includes("_")) {
+    if (supportedLanguages[language]) {
+      language = supportedLanguages[language];
+    } else {
+      const languageCode = language.split("_")[0];
+      const fallbackLanguage = Object.values(supportedLanguages).find((value) =>
+        value.startsWith(languageCode)
+      );
+      language = fallbackLanguage || language;
+    }
+  }
   return language as ISOLangCountry;
 }
