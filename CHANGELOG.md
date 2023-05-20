@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.0.12] - 2023-05-09
+
+### Added
+- add i18n & 7 languages support (Arabic, Chinese, English, French, German, Portuguese, Hebrew).
+
 ## [0.0.9] - 2023-05-09
 
 ### Fixed

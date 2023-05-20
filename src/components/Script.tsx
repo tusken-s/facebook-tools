@@ -1,10 +1,10 @@
 import React, { FC, useEffect } from "react";
-import { ll_CC } from "../index";
+import { getNavigatorLanguage, ISOLangCountry } from "../locales";
 
 export interface ScriptProps {
   appId: string;
   cookie?: boolean;
-  language?: `${Lowercase<string>}_${Uppercase<string>}`;
+  language?: ISOLangCountry;
 }
 
 const Script: FC<ScriptProps> = ({ appId, cookie, language }) => {
@@ -30,7 +30,7 @@ const Script: FC<ScriptProps> = ({ appId, cookie, language }) => {
         js.defer = true;
         js.crossOrigin = "anonymous";
         js.src = `https://connect.facebook.net/${
-          language || ll_CC || "en_US"
+          language || getNavigatorLanguage()
         }/sdk.js`;
         js.nonce = "aieR2yIx";
         fjs?.parentNode?.insertBefore(js, fjs);

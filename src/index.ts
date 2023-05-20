@@ -1,6 +1,5 @@
 import Button, { ButtonProps } from "./components/Button";
 import Script, { ScriptProps } from "./components/Script";
-import locales from "./locales";
 
 declare global {
   interface Window {
@@ -68,24 +67,4 @@ export type {
   InitParams,
 };
 
-let language = "en";
-// Use navigator language
-if (typeof navigator !== "undefined" && navigator.language)
-  language = navigator.language;
-// Use ISO language code
-if (language.includes("-")) language = language.replace("-", "_");
-// Mapping of language codes to ISO language codes with default country codes
-const languageMapping: { [ll: string]: string } = {
-  en: "en_US",
-  fr: "fr_FR",
-  ar: "ar_AR",
-  es: "es_ES",
-  de: "de_DE",
-  pt: "pt_PT",
-  zh: "zh_CN",
-  he: "he_IL",
-};
-const ll_CC = language?.includes("_") ? languageMapping[language] : language;
-const labels = locales[ll_CC];
-
-export { Button, Script, labels, ll_CC };
+export { Button, Script };
