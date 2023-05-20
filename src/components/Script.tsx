@@ -1,4 +1,5 @@
 import React, { FC, useEffect } from "react";
+import { ll_CC } from "../index";
 
 export interface ScriptProps {
   appId: string;
@@ -12,8 +13,8 @@ const Script: FC<ScriptProps> = ({ appId, cookie, language }) => {
       // Define the FB async init function
       window.fbAsyncInit = () => {
         window.FB.init({
-          appId,
-          cookie,
+          appId: appId,
+          cookie: cookie,
           autoLogAppEvents: true,
           xfbml: true,
           version: "v16.0",
@@ -28,7 +29,7 @@ const Script: FC<ScriptProps> = ({ appId, cookie, language }) => {
         js.async = true;
         js.defer = true;
         js.crossOrigin = "anonymous";
-        js.src = `https://connect.facebook.net/${language || "en_US"}/sdk.js`;
+        js.src = `https://connect.facebook.net/${language || ll_CC || "en_US"}/sdk.js`;
         js.nonce = "aieR2yIx";
         fjs.parentNode?.insertBefore(js, fjs);
       }

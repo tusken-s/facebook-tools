@@ -1,5 +1,5 @@
 import React, { CSSProperties, FC, ReactNode, useEffect } from "react";
-import { StatusResponse } from "../index";
+import { labels, StatusResponse } from "../index";
 
 export interface ButtonProps {
   disabled?: boolean;
@@ -67,7 +67,9 @@ const Button: FC<ButtonProps> = ({
       ) : (
         <button
           className="fb-button-main-element"
-          aria-label="Continue with Facebook"
+          aria-label={buttonType === "continue_with"
+            ? labels.contenue
+            : labels.login}
           style={{
             fontSize: 16,
             fontWeight: "normal",
@@ -121,8 +123,8 @@ const Button: FC<ButtonProps> = ({
             </svg>
             <span>
               {buttonType === "continue_with"
-                ? "Continue with Facebook"
-                : "Login with Facebook"}
+                ? labels.contenue
+                : labels.login}
             </span>
           </span>
         </button>

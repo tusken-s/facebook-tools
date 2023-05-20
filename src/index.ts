@@ -67,4 +67,18 @@ export type {
   InitParams,
 };
 
-export { Button, Script };
+const language = navigator.language || navigator.languages.at(0) || "en";
+// Mapping of language codes to ISO language codes with default country codes
+const languageMapping: {[ll_CC: string]: string} = {
+  "en": "en_US",
+  "fr": "fr_FR",
+  "ar": "ar_AR",
+  "pt": "pt_PT",
+  "zh": "zh_CN",
+  "es": "es_ES",
+  "he": "he_IL",
+};
+const ll_CC = language?.includes('_') ? languageMapping[language] : language;
+const labels = require(`./locales/${ll_CC}.json`);
+
+export { Button, Script, labels, ll_CC };
