@@ -4,36 +4,36 @@ type I18nType = { [ll_CC: ISOLangCountry]: { [key: string]: string } };
 
 export const labels: I18nType = {
   en_US: {
-    continue: "Continue with Facebook",
-    login: "Login with Facebook",
+    continue_with: "Continue with Facebook",
+    login_with: "Login with Facebook",
   },
   fr_FR: {
-    continue: "Continuer avec Facebook",
-    login: "Connexion avec Facebook",
+    continue_with: "Continuer avec Facebook",
+    login_with: "Connexion avec Facebook",
   },
   ar_AR: {
-    continue: "متابعة مع فيسبوك",
-    login: "تسجيل الدخول باستخدام فيسبوك",
+    continue_with: "متابعة مع فيسبوك",
+    login_with: "تسجيل الدخول باستخدام فيسبوك",
   },
   es_ES: {
-    continue: "Continuar con Facebook",
-    login: "Iniciar sesión con Facebook",
+    continue_with: "Continuar con Facebook",
+    login_with: "Iniciar sesión con Facebook",
   },
   de_DE: {
-    continue: "Mit Facebook fortfahren",
-    login: "Mit Facebook anmelden",
+    continue_with: "Mit Facebook fortfahren",
+    login_with: "Mit Facebook anmelden",
   },
   pt_PT: {
-    continue: "Continuar com o Facebook",
-    login: "Entrar com o Facebook",
+    continue_with: "Continuar com o Facebook",
+    login_with: "Entrar com o Facebook",
   },
   zh_CN: {
-    continue: "继续使用 Facebook",
-    login: "使用 Facebook 登录",
+    continue_with: "继续使用 Facebook",
+    login_with: "使用 Facebook 登录",
   },
   he_IL: {
-    continue: "המשך עם פייסבוק",
-    login: "התחבר עם פייסבוק",
+    continue_with: "המשך עם פייסבוק",
+    login_with: "התחבר עם פייסבוק",
   },
 };
 

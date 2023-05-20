@@ -24,10 +24,7 @@ const Button: FC<ButtonProps> = ({
   children,
 }) => {
   const ll_CC = language || getNavigatorLanguage();
-  const label =
-    buttonType === "continue_with"
-      ? labels[ll_CC].continue
-      : labels[ll_CC].login;
+  const label = buttonType || "continue_with";
 
   useEffect(() => {
     if (typeof window !== "undefined" && window?.FB) {
@@ -76,7 +73,7 @@ const Button: FC<ButtonProps> = ({
       ) : (
         <button
           className="fb-button-main-element"
-          aria-label={label}
+          aria-label={labels[ll_CC][label]}
           style={{
             fontSize: 16,
             fontWeight: "normal",
@@ -128,7 +125,7 @@ const Button: FC<ButtonProps> = ({
                 fill="rgb(26, 119, 242)"
               />
             </svg>
-            <span>{label}</span>
+            <span>{labels[ll_CC][label]}</span>
           </span>
         </button>
       )}
