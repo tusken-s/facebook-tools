@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - chat plugin component.
+- enhanced types for better TS support.
 - add i18n & 7 languages support (Arabic, Chinese, English, French, German, Portuguese, Hebrew).
 
 ## [0.0.9] - 2023-05-09
