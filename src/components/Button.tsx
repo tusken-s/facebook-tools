@@ -66,7 +66,9 @@ const Button: FC<ButtonProps> = ({
           style={{
             width: width || "inherit",
           }}
-          onClick={handleClick}
+          onClick={
+            typeof window === "undefined" || disabled ? undefined : handleClick
+          }
         >
           {children}
         </div>
