@@ -22,7 +22,7 @@ declare global {
         params?: FacebookApiParams,
         callback?: (response: any) => void
       ) => void;
-      init: (params: InitParams) => void;
+      init: (params: InitButtonParams | InitChatParams) => void;
     };
   }
 }
@@ -49,10 +49,16 @@ type LoginOptions = {
   rerequest?: boolean;
   return_nonce?: boolean;
 };
-type InitParams = {
+type InitButtonParams = {
   appId: string;
   autoLogAppEvents?: boolean;
   cookie?: boolean;
+  xfbml?: boolean;
+  version: string;
+};
+type InitChatParams = {
+  appId?: string;
+  autoLogAppEvents?: boolean;
   xfbml?: boolean;
   version: string;
 };
@@ -64,7 +70,8 @@ export type {
   ApiMethod,
   FacebookApiParams,
   LoginOptions,
-  InitParams,
+  InitButtonParams,
+  InitChatParams,
 };
 
 export { Button, Script };
