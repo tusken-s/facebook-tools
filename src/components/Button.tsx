@@ -67,9 +67,9 @@ const Button: FC<ButtonProps> = ({
       ) : (
         <button
           className="fb-button-main-element"
-          aria-label={buttonType === "continue_with"
-            ? labels.contenue
-            : labels.login}
+          aria-label={
+            buttonType === "continue_with" ? labels.contenue : labels.login
+          }
           style={{
             fontSize: 16,
             fontWeight: "normal",
@@ -122,9 +122,7 @@ const Button: FC<ButtonProps> = ({
               />
             </svg>
             <span>
-              {buttonType === "continue_with"
-                ? labels.contenue
-                : labels.login}
+              {buttonType === "continue_with" ? labels.contenue : labels.login}
             </span>
           </span>
         </button>

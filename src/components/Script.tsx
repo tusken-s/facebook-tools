@@ -29,9 +29,11 @@ const Script: FC<ScriptProps> = ({ appId, cookie, language }) => {
         js.async = true;
         js.defer = true;
         js.crossOrigin = "anonymous";
-        js.src = `https://connect.facebook.net/${language || ll_CC || "en_US"}/sdk.js`;
+        js.src = `https://connect.facebook.net/${
+          language || ll_CC || "en_US"
+        }/sdk.js`;
         js.nonce = "aieR2yIx";
-        fjs.parentNode?.insertBefore(js, fjs);
+        fjs?.parentNode?.insertBefore(js, fjs);
       }
     } else {
       console.error("props 'appId' is required to initiate Facebook SDK!");
