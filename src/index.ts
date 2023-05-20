@@ -1,4 +1,5 @@
 import Button, { ButtonProps } from "./components/Button";
+import Chat, { ChatProps } from "./components/Chat";
 import Script, { ScriptProps } from "./components/Script";
 
 declare global {
@@ -65,6 +66,7 @@ type InitChatParams = {
 
 export type {
   ButtonProps,
+  ChatProps,
   ScriptProps,
   StatusResponse,
   ApiMethod,
@@ -74,4 +76,4 @@ export type {
   InitChatParams,
 };
 
-export { Button, Script };
+export { Button, Chat, Script };
