@@ -1,6 +1,6 @@
 {
   "name": "@tusken-s/facebook-tools",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "A rich set of first class typescript, react-based, client-side functionality for adding Social Plugins, Facebook Login and Graph API calls.",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
@@ -13,7 +13,8 @@
     "test": "echo \"module test skipped\"",
     "prettier": "prettier --write \"{src,tests,example/src}/**/*.{js,ts,jsx,tsx}\"",
     "prepare": "yarn build",
-    "prepublishOnly": "yarn test && yarn prettier && yarn lint"
+    "prepublishOnly": "yarn test && yarn prettier && yarn lint",
+    "pack": "npm pack --pack-destination ~"
   },
   "author": "Tuskens MEA Team <hello@tuskens.com> (https://tuskens.digital)",
   "repository": {
