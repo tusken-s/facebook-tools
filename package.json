@@ -1,6 +1,6 @@
 {
   "name": "@tusken-s/facebook-tools",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "description": "A rich set of first class typescript, react-based, client-side functionality for adding Social Plugins, Facebook Login and Graph API calls.",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",

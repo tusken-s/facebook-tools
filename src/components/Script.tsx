@@ -19,8 +19,8 @@ const Script: FC<ScriptProps> = ({
   language,
   features,
 }) => {
-  let loginScript = useRef<HTMLScriptElement>(null);
-  let chatScript = useRef<HTMLScriptElement>(null);
+  const loginScript = useRef<HTMLScriptElement>(null);
+  const chatScript = useRef<HTMLScriptElement>(null);
 
   useEffect(() => {
     if (
@@ -52,7 +52,7 @@ const Script: FC<ScriptProps> = ({
     } else {
       console.error("props 'appId' is required to initiate Facebook SDK!");
     }
-  }, [appId, pageId, cookie, language]);
+  }, [appId, pageId, cookie, language, features, nonce]);
 
   useEffect(() => {
     if (
@@ -70,7 +70,7 @@ const Script: FC<ScriptProps> = ({
           version: "v16.0",
         });
       };
-  }, [loginScript.current, chatScript.current]);
+  }, [loginScript, chatScript, appId, cookie]);
 
   return (
     <>

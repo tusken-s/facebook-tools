@@ -12,7 +12,7 @@ const Chat: FC<ChatProps> = ({ pageId }) => {
       container.current.setAttribute("page_id", pageId);
       container.current.setAttribute("attribution", "biz_inbox");
     }
-  }, [container.current]);
+  }, [container, pageId]);
 
   return (
     <>
