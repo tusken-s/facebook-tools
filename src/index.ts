@@ -2,6 +2,10 @@ import Button, { ButtonProps } from "./components/Button";
 import Chat, { ChatProps } from "./components/Chat";
 import Script, { ScriptProps } from "./components/Script";
 
+enum Features {
+  LOGIN_BUTTON = "loginButton",
+  CHAT_PLUGIN = "chatPlugin",
+}
 type StatusResponse = {
   status: "connected" | "not_authorized" | "unknown";
   authResponse?: {
@@ -117,4 +121,4 @@ declare global {
 
 export type { ButtonProps, ChatProps, ScriptProps, StatusResponse };
 
-export { Button, Chat, Script };
+export { Features, Button, Chat, Script };
