@@ -1,5 +1,6 @@
-import React, { FC, ReactNode, useEffect } from "react";
+import React, { CSSProperties, FC, ReactNode, useEffect } from "react";
 import { StatusResponse } from "../index";
+import { getNavigatorLanguage, ISOLangCountry, labels } from "../locales";
 
 export interface ButtonProps {
   disabled?: boolean;
@@ -7,7 +8,8 @@ export interface ButtonProps {
   scope?: string;
   buttonType?: "continue_with" | "login_with";
   callback: (x: StatusResponse["authResponse"]) => void;
-  style?: CSSStyleRule;
+  style?: CSSProperties;
+  language?: ISOLangCountry;
   children?: ReactNode;
 }
 
@@ -18,8 +20,12 @@ const Button: FC<ButtonProps> = ({
   disabled,
   width,
   style,
+  language,
   children,
 }) => {
+  const ll_CC = language || getNavigatorLanguage();
+  const label = buttonType || "continue_with";
+
   useEffect(() => {
     if (typeof window !== "undefined" && window?.FB) {
       window.FB.Event.subscribe("auth.statusChange", () => {
@@ -56,11 +62,20 @@ const Button: FC<ButtonProps> = ({
       }}
     >
       {children ? (
-        <div onClick={handleClick}>{children}</div>
+        <div
+          style={{
+            width: width || "inherit",
+          }}
+          onClick={
+            typeof window === "undefined" || disabled ? undefined : handleClick
+          }
+        >
+          {children}
+        </div>
       ) : (
         <button
           className="fb-button-main-element"
-          aria-label="Continue with Facebook"
+          aria-label={labels[ll_CC][label]}
           style={{
             fontSize: 16,
             fontWeight: "normal",
@@ -112,11 +127,7 @@ const Button: FC<ButtonProps> = ({
                 fill="rgb(26, 119, 242)"
               />
             </svg>
-            <span>
-              {buttonType === "continue_with"
-                ? "Continue with Facebook"
-                : "Login with Facebook"}
-            </span>
+            <span>{labels[ll_CC][label]}</span>
           </span>
         </button>
       )}
