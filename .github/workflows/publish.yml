@@ -10,19 +10,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
+      # Setup .npmrc file to publish to GitHub Packages
+      - uses: actions/setup-node@v3
         with:
-          node-version: "16"
+          node-version: '16.x'
+          registry-url: 'https://registry.npmjs.org'
+          # Defaults to the user or organization that owns the workflow file
+          scope: '@tusken-s'
 
       - name: Install Dependencies
         run: yarn install --frozen-lockfile
 
       - name: Build Package
-        run: npm run prepare && npm run pack
+        run: yarn prepare && yarn pack
 
       - name: Publish Package
         run: yarn publish --non-interactive --no-progress --registry=https://registry.npmjs.org/
