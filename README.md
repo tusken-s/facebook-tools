@@ -21,7 +21,7 @@ yarn add @tusken-s/facebook-tools
 Import the required components from the Nom module as shown below:
 
 ```jsx
-import { Script, Chat, Button } from "@tusken-s/facebook-tools";
+import { Script, Button } from "@tusken-s/facebook-tools";
 ```
 
 ### Script Component
@@ -52,24 +52,6 @@ Make sure to replace `your_theme_color`, `facebook_app_id` and `facebook_page_id
 | nonce    | string           | The nonce value for script security.                           |
 | language | ISOLangCountry   | The language for the script.                                   |
 | features | Array\<Features> | An array of Facebook features to enable.                       |
-
-### Chat Component
-
-The `Chat` component allows you to embed a Facebook Chat Plugin into your application. Here is an example of how to use it:
-
-```jsx
-<Chat minimized={true} color={your_theme_color} pageId={facebook_page_id} />
-```
-
-Ensure to replace `facebook_page_id` with the appropriate Facebook page ID from your application's configuration. Additionally, you can customize the `minimized` and `color` props to fit your specific requirements.
-
-### Chat Plugin Component Props
-
-| Prop      | Type    | Description                                     |
-| --------- | ------- | ----------------------------------------------- |
-| pageId    | string  | The Facebook page ID.                           |
-| color     | string  | The color of the chat plugin.                   |
-| minimized | boolean | Specifies whether the chat plugin is minimized. |
 
 ### Login Button Component
 

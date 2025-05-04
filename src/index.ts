@@ -1,5 +1,4 @@
 import Button, { ButtonProps } from "./components/Button";
-import Chat, { ChatProps } from "./components/Chat";
 import Script, { ScriptProps } from "./components/Script";
 
 enum Features {
@@ -33,10 +32,6 @@ type InitButtonParams = {
   appId: string;
   autoLogAppEvents?: boolean;
   cookie?: boolean;
-  xfbml?: boolean;
-  version: string;
-};
-type InitChatParams = {
   xfbml?: boolean;
   version: string;
 };
@@ -94,31 +89,11 @@ declare global {
        * Initializes Facebook components such as buttons or chat plugins.
        * @param params - Parameters for the initialization.
        */
-      init: (params: InitButtonParams | InitChatParams) => void;
-
-      CustomerChat: {
-        /**
-         * Initializes the Facebook Chat Plugin with the specified parameters.
-         * @param pageId - The ID of the Facebook Page to associate with the Chat Plugin.
-         * @param loggedInGreeting - The greeting message to display when the user is logged in.
-         * @param loggedOutGreeting - The greeting message to display when the user is logged out.
-         */
-        init(
-          pageId: string,
-          loggedInGreeting?: string,
-          loggedOutGreeting?: string
-        ): void;
-
-        /**
-         * Shows or hides the Facebook Chat Plugin dialog.
-         * @param show - Determines whether to show or hide the Chat Plugin dialog. Set to `true` to show and `false` to hide.
-         */
-        show(show: boolean): void;
-      };
+      init: (params: InitButtonParams) => void;
     };
   }
 }
 
-export type { ButtonProps, ChatProps, ScriptProps, StatusResponse };
+export type { ButtonProps, ScriptProps, StatusResponse };
 
-export { Features, Button, Chat, Script };
+export { Features, Button, Script };

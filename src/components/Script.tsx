@@ -63,7 +63,7 @@ const Script: FC<ScriptProps> = ({
       window.fbAsyncInit = () => {
         // Handle login status and login/logout events
         window.FB.init({
-          appId: appId,
+          appId,
           cookie: cookie,
           autoLogAppEvents: true,
           xfbml: true,
