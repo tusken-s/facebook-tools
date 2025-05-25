@@ -153,6 +153,6 @@ This project is licensed under the terms of the [MIT license](/LICENSE).
 
 Our Sponsors push our Research, Development & Infrastructure:
 
-[<img loading="lazy" alt="Tuskens" src="https://tuskens.com/img/android-chrome-192x192.png" height="25">](https://tuskens.com/)
+[<img loading="lazy" alt="Tuskens" src="https://tuskens.com/logo.svg" height="25">](https://tuskens.com/)
 
 Tuskens allow us to host the Git repository and coordinate contributions.
