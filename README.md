@@ -1,6 +1,7 @@
 # Facebook Tools
 
 ![npm type definitions](https://img.shields.io/npm/types/typescript)
+[![codecov](https://codecov.io/gh/tusken-s/facebook-tools/graph/badge.svg?token=7DX1WYDOSB)](https://codecov.io/gh/tusken-s/facebook-tools)
 
 The tool set is a comprehensive TypeScript and React-based client-side module that provides first-class functionality for adding Social Plugins and Facebook Login to your web application.
 

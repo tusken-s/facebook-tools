@@ -26,6 +26,11 @@ jobs:
       - name: Build Package
         run: yarn prepare && yarn pack
 
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v3
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+
       - name: Publish Package
         run: yarn publish --non-interactive --no-progress --registry=https://registry.npmjs.org/
         env:
