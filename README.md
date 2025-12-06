@@ -3,6 +3,27 @@
 ![npm type definitions](https://img.shields.io/npm/types/typescript)
 [![codecov](https://codecov.io/gh/tusken-s/facebook-tools/graph/badge.svg?token=7DX1WYDOSB)](https://codecov.io/gh/tusken-s/facebook-tools)
 
+## ⚠️ Project Status: No Longer Maintained
+
+**This module is no longer actively maintained.** We do not recommend relying on this package for projects requiring ongoing support, updates, or security patches.
+
+### What does this mean?
+- No further bug fixes, feature requests, or security updates will be provided.
+- No new releases are planned.
+- We will not be monitoring issues or PRs on a regular basis.
+
+### Official alternatives
+We recommend evaluating the following official solutions depending on your use-case:
+
+- [Facebook Graph API](https://developers.facebook.com/docs/graph-api/) — Official API for programmatic access to Facebook features.
+- [Facebook SDKs](https://developers.facebook.com/docs/apis-and-sdks/) — Facebook-supported SDKs for various platforms.
+
+If you require tools similar to what this module offered, please refer to the official documentation or SDKs, or consider forking this project if you wish to continue its development independently.
+
+Thank you to everyone who has contributed, reported issues, and used this library over the years.
+
+---
+
 The tool set is a comprehensive TypeScript and React-based client-side module that provides first-class functionality for adding Social Plugins and Facebook Login to your web application.
 
 This module allows seamless integration of Facebook features into your React components. The following example demonstrates the usage of the components provided by Nom:
@@ -131,12 +152,7 @@ and you won't get any type errors.
 
 ## Contributing
 
-Contributions are welcome! If you find any issues or have suggestions for improvement, please open an issue or submit a pull request on the [GitHub repository](https://github.com/tusken-s/facebook-tools).
-
-Read the [contributing guide](/CONTRIBUTING.md) to learn about our development process, how to propose bugfixes and improvements, and how to build and test your changes.
-
-Notice that contributions go far beyond pull requests and commits.
-Although we love giving you the opportunity to put your stamp on the module, we also are thrilled to receive a variety of [other contributions](/CONTRIBUTORS).
+**This project is no longer maintained.** We are not accepting new contributions, pull requests, or issues. If you wish to continue development, please consider forking the repository.
 
 ## Changelog
 
@@ -144,7 +160,7 @@ The [changelog](/CHANGELOG.md) is regularly updated to reflect what's changed in
 
 ## Roadmap
 
-Future plans and high-priority features and enhancements can be found **soon** in our [roadmap page](https://tuskens.com/libs#/facebook-tools/roadmap/).
+**This project is no longer maintained.** There are no future plans or upcoming features.
 
 ## License
 
