@@ -62,13 +62,15 @@ const Script: FC<ScriptProps> = ({
       // Define the FB async init function
       window.fbAsyncInit = () => {
         // Handle login status and login/logout events
-        window.FB.init({
-          appId,
-          cookie: cookie,
-          autoLogAppEvents: true,
-          xfbml: true,
-          version: "v16.0",
-        });
+        if (appId) {
+          window.FB.init({
+            appId,
+            cookie: cookie,
+            autoLogAppEvents: true,
+            xfbml: true,
+            version: "v16.0",
+          });
+        }
       };
   }, [loginScript, chatScript, appId, cookie]);
 
