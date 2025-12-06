@@ -12,6 +12,7 @@ Please migrate to official Facebook solutions:
 - Facebook SDKs: https://developers.facebook.com/docs/apis-and-sdks/
 ${reset}`);
 } catch (error) {
-  // Silently fail to avoid breaking installation
+  // Log basic error information but don't break installation
+  console.error('Note: Unable to display deprecation warning:', error.message);
   process.exit(0);
 }
