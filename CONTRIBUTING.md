@@ -1,6 +1,21 @@
 # Contributing to the Project
 
-Thank you for considering contributing to this project! We appreciate your time and effort in making this project better.
+## ⚠️ Project Status: No Longer Maintained
+
+**This project is no longer actively maintained.** We are not accepting new contributions, pull requests, or issues at this time.
+
+If you wish to continue development of this project, please consider forking the repository and maintaining your own version.
+
+Thank you for your interest in this project.
+
+---
+
+## Historical Information
+
+The sections below are kept for historical reference only.
+
+<details>
+<summary>Previous Contributing Guidelines (No Longer Active)</summary>
 
 ## Getting Started
 
@@ -46,3 +61,5 @@ If you encounter any issues or have suggestions for improvement, please open an 
 By contributing to this project, you agree that your contributions will be licensed under the [LICENSE](/LICENSE) of the project.
 
 Thank you once again for your interest in contributing! We appreciate your support and look forward to your contributions.
+
+</details>

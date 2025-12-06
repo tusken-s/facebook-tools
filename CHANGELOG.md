@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [Unmaintained] - 2025-12-06
+
+### Announcement
+
+**This project is no longer maintained.** No further updates, bug fixes, or security patches will be provided.
+
+Users are encouraged to migrate to official Facebook solutions:
+- [Facebook Graph API](https://developers.facebook.com/docs/graph-api/)
+- [Facebook SDKs](https://developers.facebook.com/docs/apis-and-sdks/)
+
+Thank you to all contributors and users who have supported this project.
+
 ## [0.0.26] - 2023-06-19
 
 ### Added

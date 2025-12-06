@@ -1,7 +1,7 @@
 {
   "name": "@tusken-s/facebook-tools",
   "version": "0.0.27",
-  "description": "A rich set of first class typescript, react-based, client-side functionality for adding Social Plugins, Facebook Login and Graph API calls.",
+  "description": "[DEPRECATED - NO LONGER MAINTAINED] A rich set of first class typescript, react-based, client-side functionality for adding Social Plugins, Facebook Login and Graph API calls. Please use official Facebook SDKs instead.",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/esm/index.d.ts",
@@ -14,7 +14,8 @@
     "prettier": "prettier --write \"{src,tests,example/src}/**/*.{js,ts,jsx,tsx}\"",
     "prepare": "yarn build",
     "prepublishOnly": "yarn test && yarn prettier && yarn lint",
-    "pack": "npm pack --pack-destination ~"
+    "pack": "npm pack --pack-destination ~",
+    "postinstall": "node scripts/deprecation-warning.js"
   },
   "author": "Tuskens MEA Team <hello@tuskens.com> (https://tuskens.digital)",
   "repository": {
@@ -45,7 +46,8 @@
   "files": [
     "dist",
     "LICENSE",
-    "README.md"
+    "README.md",
+    "scripts"
   ],
   "keywords": [
     "react",
