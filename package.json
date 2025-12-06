@@ -15,7 +15,7 @@
     "prepare": "yarn build",
     "prepublishOnly": "yarn test && yarn prettier && yarn lint",
     "pack": "npm pack --pack-destination ~",
-    "postinstall": "node -e \"console.log('\\n\\x1b[33m⚠️  WARNING: @tusken-s/facebook-tools is DEPRECATED and no longer maintained.\\n\\nPlease migrate to official Facebook solutions:\\n- Facebook Graph API: https://developers.facebook.com/docs/graph-api/\\n- Facebook SDKs: https://developers.facebook.com/docs/apis-and-sdks/\\n\\x1b[0m')\""
+    "postinstall": "node scripts/deprecation-warning.js"
   },
   "author": "Tuskens MEA Team <hello@tuskens.com> (https://tuskens.digital)",
   "repository": {
@@ -46,7 +46,8 @@
   "files": [
     "dist",
     "LICENSE",
-    "README.md"
+    "README.md",
+    "scripts"
   ],
   "keywords": [
     "react",
