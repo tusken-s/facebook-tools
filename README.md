@@ -128,7 +128,6 @@ The Facebook Tools module supports the following languages:
 - Hebrew (he_IL)
 
 If the desired language is not specified or unsupported, the module will default to English (en_US). Additionally, when the user does not explicitly specify a language, the module will automatically use the browser's language setting.
-Your [contribution](/CONTRIBUTING.md) to energize this with predefined facebook languages or to add more to the package will be welcome.
 
 ## Facebook SDK Type Definitions
 
@@ -156,7 +155,7 @@ and you won't get any type errors.
 
 ## Changelog
 
-The [changelog](/CHANGELOG.md) is regularly updated to reflect what's changed in each new release.
+See the [changelog](/CHANGELOG.md) for historical release information.
 
 ## Roadmap
 
